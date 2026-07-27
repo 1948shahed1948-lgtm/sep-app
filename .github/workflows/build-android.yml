@@ -96,7 +96,7 @@ jobs:
       - name: Generate release keystore
         run: |
           keytool -genkeypair -v \
-            -keystore release.keystore \
+            -keystore "$GITHUB_WORKSPACE/release.keystore" \
             -alias quizgate \
             -keyalg RSA -keysize 2048 \
             -validity 10000 \
@@ -108,7 +108,7 @@ jobs:
         working-directory: android
         run: |
           ./gradlew bundleRelease \
-            -Pandroid.injected.signing.store.file="../release.keystore" \
+            -Pandroid.injected.signing.store.file="$GITHUB_WORKSPACE/release.keystore" \
             -Pandroid.injected.signing.store.password="quizgate123" \
             -Pandroid.injected.signing.key.alias="quizgate" \
             -Pandroid.injected.signing.key.password="quizgate123"
