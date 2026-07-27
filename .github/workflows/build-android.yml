@@ -76,14 +76,14 @@ jobs:
         run: |
           GRADLE="android/app/build.gradle"
           if [ -f "$GRADLE" ]; then
-            sed -i "s/applicationId ["'].*/applicationId \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
-            sed -i "s/namespace ["'].*/namespace \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
-            sed -i "s/versionCode [0-9]*/versionCode 9/" "$GRADLE"
-            sed -i "s/versionName ["'].*/versionName \"1.0.8\"/" "$GRADLE"
+            sed -i 's/applicationId .*/applicationId "com.base6a664795ea19cd7af8bd2850.app"/' "$GRADLE"
+            sed -i 's/namespace .*/namespace "com.base6a664795ea19cd7af8bd2850.app"/' "$GRADLE"
+            sed -i 's/versionCode [0-9]*/versionCode 9/' "$GRADLE"
+            sed -i 's/versionName .*/versionName "1.0.8"/' "$GRADLE"
           fi
           MANIFEST="android/app/src/main/AndroidManifest.xml"
           if [ -f "$MANIFEST" ]; then
-            sed -i "s/package=\"[^\"]*\"/package=\"com.base6a664795ea19cd7af8bd2850.app\"/" "$MANIFEST"
+            sed -i 's/package="[^"]*"/package="com.base6a664795ea19cd7af8bd2850.app"/' "$MANIFEST"
           fi
           PKG_PATH=$(echo "com.base6a664795ea19cd7af8bd2850.app" | tr '.' '/')
           SRC_DIR="android/app/src/main/java"
