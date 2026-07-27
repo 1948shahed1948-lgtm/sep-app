@@ -1,15 +1,7 @@
-# ─────────────────────────────────────────────────────────────────────
-#  بوابة الأسئلة بلس — بناء AAB آلياً في سحابة GitHub Actions
-#  Package: com.base6a664795ea19cd7af8bd2850.app  |  Version: 1.0.7
-# ─────────────────────────────────────────────────────────────────────
-#  هذا الملف جاهز — انسخه يدوياً إلى:
-#    .github/workflows/build-android.yml
-#  ثم ارفع الكود إلى GitHub، وسيظهر في تبويب Actions.
-# ─────────────────────────────────────────────────────────────────────
 name: Build Android AAB
 
 on:
-  workflow_dispatch:  # تشغيل يدوي من GitHub
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -19,47 +11,68 @@ on:
       - 'package.json'
       - 'capacitor.config.ts'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
+    name: Build AAB
     runs-on: ubuntu-latest
-    steps:
-      # 1) تحضير الكود
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
 
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v4
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@f08459939c4209ba06daddb84f215b8ec5b4d929 # v2.20.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            nodejs.org:443
+            dl.google.com:443
+            maven.google.com:443
+            plugins.gradle.org:443
+            plugins-artifacts.gradle.org:443
+            services.gradle.org:443
+            repo.maven.apache.org:443
+            downloads.gradle.org:443
+
+      - name: Clone repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: ☕ Setup Java (Android)
-        uses: actions/setup-java@v4
+      - name: Set up JDK
+        uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
         with:
-          distribution: 'temurin'
           java-version: '17'
+          distribution: temurin
 
-      - name: 🤖 Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@07d76e79d4b2c7f5da4f6f7b11ab7d9c3d8b0a91 # v3
         with:
           packages: 'tools platform-tools build-tools;34.0.0 platforms;android-34'
 
-      # 2) تثبيت الاعتماديات وبناء الويب
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: npm ci || npm install
 
-      - name: 🔨 Build web app (Vite)
+      - name: Build web app (Vite)
         run: npm run build
         env:
           NODE_ENV: production
 
-      # 3) إعداد Capacitor + Android
-      - name: 📲 Add Android platform
+      - name: Add Android platform
         run: |
           npx cap add android || true
           npx cap sync android
 
-      - name: 🔧 Fix package name and versionCode
+      - name: Fix package name and versionCode
         run: |
           GRADLE="android/app/build.gradle"
           if [ -f "$GRADLE" ]; then
@@ -72,7 +85,6 @@ jobs:
           if [ -f "$MANIFEST" ]; then
             sed -i "s/package=\"[^\"]*\"/package=\"com.base6a664795ea19cd7af8bd2850.app\"/" "$MANIFEST"
           fi
-          # إعادة ترتيب مجلد الجافا لمطابقة namespace
           PKG_PATH=$(echo "com.base6a664795ea19cd7af8bd2850.app" | tr '.' '/')
           SRC_DIR="android/app/src/main/java"
           if [ -d "$SRC_DIR" ] && [ ! -d "$SRC_DIR/$PKG_PATH" ]; then
@@ -80,10 +92,8 @@ jobs:
             find "$SRC_DIR" -maxdepth 5 -name "*.java" -exec cp {} "$SRC_DIR/$PKG_PATH/" \;
             find "$SRC_DIR" -mindepth 1 -type d ! -path "$SRC_DIR/$PKG_PATH*" -empty -delete 2>/dev/null || true
           fi
-          echo "✅ Package name + versionCode 8 fixed"
 
-      # 4) توليد مفتاح التوقيع
-      - name: 🔑 Generate release keystore
+      - name: Generate release keystore
         run: |
           keytool -genkeypair -v \
             -keystore release.keystore \
@@ -94,8 +104,7 @@ jobs:
             -keypass quizgate123 \
             -dname "CN=QuizGate Plus, OU=Education, O=QuizGate, L=Riyadh, ST=Riyadh, C=SA"
 
-      # 5) بناء ملف AAB الموقّع
-      - name: 🏗️ Build signed AAB
+      - name: Build signed AAB
         working-directory: android
         run: |
           ./gradlew bundleRelease \
@@ -104,22 +113,12 @@ jobs:
             -Pandroid.injected.signing.key.alias="quizgate" \
             -Pandroid.injected.signing.key.password="quizgate123"
 
-      # 6) رفع الملف كـ Artifact
-      - name: 📤 Upload AAB artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@b4b15b8c5c8691234d8d8e7c7e5b4d929 # v4
         with:
           name: quizgate-plus-aab
           path: android/app/build/outputs/bundle/release/*.aab
           retention-days: 30
-
-      - name: ✅ Build complete
-        run: |
-          echo "🎉 ─────────────────────────────"
-          echo "✅ AAB built successfully!"
-          echo "📁 Download it from the workflow run artifacts"
-          echo "📦 Package: com.base6a664795ea19cd7af8bd2850.app"
-          echo "🏷️  Version: 1.0.0"
-          echo "─────────────────────────────"
 
 # ─────────────────────────────────────────────────────────────────
 # ⚠️ للنشر الرسمي على Google Play يلزم مفتاح توقيع ثابت:
