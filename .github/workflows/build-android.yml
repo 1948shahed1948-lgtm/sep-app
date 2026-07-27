@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f08459939c4209ba06daddb84f215b8ec5b4d929 # v2.20.0
+        uses: step-security/harden-runner@v2
         with:
           egress-policy: block
           allowed-endpoints: >
@@ -40,22 +40,22 @@ jobs:
             downloads.gradle.org:443
 
       - name: Clone repo
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Set up JDK
-        uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: temurin
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@07d76e79d4b2c7f5da4f6f7b11ab7d9c3d8b0a91 # v3
+        uses: android-actions/setup-android@v3
         with:
           packages: 'tools platform-tools build-tools;34.0.0 platforms;android-34'
 
