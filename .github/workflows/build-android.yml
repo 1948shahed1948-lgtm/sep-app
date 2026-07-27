@@ -114,7 +114,7 @@ jobs:
             -Pandroid.injected.signing.key.password="quizgate123"
 
       - name: Upload AAB artifact
-        uses: actions/upload-artifact@b4b15b8c5c8691234d8d8e7c7e5b4d929 # v4
+        uses: actions/upload-artifact@v4
         with:
           name: quizgate-plus-aab
           path: android/app/build/outputs/bundle/release/*.aab
