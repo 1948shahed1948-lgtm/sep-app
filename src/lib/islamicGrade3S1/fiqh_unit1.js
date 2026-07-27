@@ -1,0 +1,268 @@
+// التربية الإسلامية — الصف الثالث الابتدائي — الفصل الأول
+// الفقه والسلوك — الوحدة الأولى: آداب قضاء الحاجة
+// المصدر: كتاب التوحيد والفقه والسلوك 1447هـ — ص 39-55
+
+export const PDF_37_39 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/e91134ff1________37-39.pdf';
+export const PDF_40_42 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/74c601d91________40-42.pdf';
+export const PDF_43_45 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/953f641eb________43-45.pdf';
+export const PDF_46_48 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/00854cba5________46-48.pdf';
+export const PDF_49_51 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/6b0c2e26f________49-51.pdf';
+export const PDF_52_54 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/0cf3a27fc________52-54.pdf';
+export const PDF_55_57 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/c00ae30d2________55-57.pdf';
+
+export const FIQH_UNIT1_QUESTIONS = [
+  // ص 39-41: الدعاء عند دخول الخلاء والخروج منه
+  {
+    id: 'f1q1', unit: 'fiqh1', lesson: 'f1l1', page: 39,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_37_39,
+    question: 'ما الدعاء الذي يُقال عند دخول الخلاء؟',
+    options: [
+      { text: 'اللهم إني أعوذ بك من الخُبث والخبائث', correct: true },
+      { text: 'بسم الله الرحمن الرحيم', correct: false },
+      { text: 'اللهم اغفر لي', correct: false },
+      { text: 'الحمد لله', correct: false },
+    ],
+    explanation: 'عند دخول الخلاء يُقال: "بسم الله، اللهم إني أعوذ بك من الخُبث والخبائث".',
+    goldenRule: 'دعاء دخول الخلاء: اللهم إني أعوذ بك من الخُبث والخبائث.',
+  },
+  {
+    id: 'f1q2', unit: 'fiqh1', lesson: 'f1l1', page: 39,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_37_39,
+    question: 'ما الدعاء الذي يُقال عند الخروج من الخلاء؟',
+    options: [
+      { text: 'غُفرانك', correct: true },
+      { text: 'الحمد لله الذي أذهب عني الأذى', correct: false },
+      { text: 'اللهم إني أعوذ بك', correct: false },
+      { text: 'بسم الله', correct: false },
+    ],
+    explanation: 'عند الخروج من الخلاء يُقال: "غُفرانك". أخرجه أبو داود والترمذي.',
+    goldenRule: 'دعاء الخروج من الخلاء: غُفرانك.',
+  },
+  {
+    id: 'f1q3', unit: 'fiqh1', lesson: 'f1l1', page: 40,
+    type: 'trueFalse', bloom: 'understand', difficulty: 'easy',
+    bookRef: PDF_40_42,
+    question: 'يُستحب تقديم الرجل اليسرى عند دخول الخلاء.',
+    correctAnswer: true,
+    explanation: 'يُستحب تقديم الرجل اليسرى عند دخول الخلاء، واليمنى عند الخروج منه.',
+    goldenRule: 'دخول الخلاء: القدم اليسرى. الخروج: القدم اليمنى.',
+  },
+  {
+    id: 'f1q4', unit: 'fiqh1', lesson: 'f1l1', page: 40,
+    type: 'ordering', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_40_42,
+    question: 'رتّب خطوات دخول الخلاء بالترتيب الصحيح:',
+    items: ['تقديم الرجل اليسرى', 'قول الدعاء: اللهم إني أعوذ بك من الخُبث والخبائث', 'قضاء الحاجة', 'الخروج بالرجل اليمنى وقول: غُفرانك'],
+    correctOrder: [1, 0, 2, 3],
+    explanation: 'الترتيب الصحيح: الدعاء ← اليسرى ← قضاء الحاجة ← الخروج باليمنى وقول غُفرانك.',
+    goldenRule: 'آداب الخلاء مرتّبة: دعاء ← يسرى ← حاجة ← يمنى + غُفرانك.',
+  },
+  // ص 41-43: آداب قضاء الحاجة في الفضاء المكشوف
+  {
+    id: 'f1q5', unit: 'fiqh1', lesson: 'f1l2', page: 41,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_40_42,
+    question: 'ما الذي يجب تجنّبه عند قضاء الحاجة في الفضاء المكشوف؟',
+    options: [
+      { text: 'الاستقبال أو الاستدبار للقبلة', correct: true },
+      { text: 'الجلوس في مكان ظليل', correct: false },
+      { text: 'الابتعاد عن الناس', correct: false },
+      { text: 'الإسراع في قضاء الحاجة', correct: false },
+    ],
+    explanation: 'يُنهى عن استقبال القبلة أو استدبارها عند قضاء الحاجة في الفضاء المكشوف.',
+    goldenRule: 'في الفضاء المكشوف: تجنّب استقبال القبلة واستدبارها.',
+  },
+  {
+    id: 'f1q6', unit: 'fiqh1', lesson: 'f1l2', page: 42,
+    type: 'trueFalse', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_40_42,
+    question: 'يجوز قضاء الحاجة في الطريق أو ظل الشجرة التي يستظل بها الناس.',
+    correctAnswer: false,
+    explanation: 'نهى النبي ﷺ عن قضاء الحاجة في الطريق أو ظل الشجرة التي يستظل بها الناس أو على شط نهر.',
+    goldenRule: 'لا يجوز قضاء الحاجة في الطريق أو ظل الناس أو شط النهر.',
+  },
+  {
+    id: 'f1q7', unit: 'fiqh1', lesson: 'f1l2', page: 42,
+    type: 'classify', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_40_42,
+    question: 'صنّف: مواضع يجوز فيها قضاء الحاجة / مواضع لا يجوز:',
+    categories: ['يجوز ✓', 'لا يجوز ✗'],
+    items: [
+      { text: 'مكان بعيد مستور عن الناس', correct_category: 0 },
+      { text: 'في الطريق العام', correct_category: 1 },
+      { text: 'ظل الشجرة التي يستظل بها الناس', correct_category: 1 },
+      { text: 'دورة المياه', correct_category: 0 },
+      { text: 'على شط النهر', correct_category: 1 },
+    ],
+    explanation: 'يجوز: المكان المستور والمرافق الصحية. لا يجوز: الطريق وظل الناس وشط النهر.',
+    goldenRule: 'قضاء الحاجة في الأماكن المناسبة البعيدة عن الأذى.',
+  },
+  // ص 44-48: الاستنجاء والاستجمار
+  {
+    id: 'f1q8', unit: 'fiqh1', lesson: 'f1l3', page: 44,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_43_45,
+    question: 'الاستنجاء هو:',
+    options: [
+      { text: 'إزالة النجاسة بالماء من موضع الحدث', correct: true },
+      { text: 'إزالة النجاسة بالأحجار أو المناديل', correct: false },
+      { text: 'غسل اليدين بالصابون', correct: false },
+      { text: 'الوضوء الكامل', correct: false },
+    ],
+    explanation: 'الاستنجاء: إزالة النجاسة بالماء من موضع الحدث. والاستجمار: إزالتها بالأحجار أو ما يقوم مقامها.',
+    goldenRule: 'الاستنجاء = بالماء. الاستجمار = بالأحجار أو المناديل.',
+  },
+  {
+    id: 'f1q9', unit: 'fiqh1', lesson: 'f1l3', page: 45,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_43_45,
+    question: 'الاستجمار هو:',
+    options: [
+      { text: 'إزالة النجاسة بالأحجار أو ما يقوم مقامها كالمناديل الورقية', correct: true },
+      { text: 'إزالة النجاسة بالماء', correct: false },
+      { text: 'الوضوء بعد الاستنجاء', correct: false },
+      { text: 'غسل الجسم بالكامل', correct: false },
+    ],
+    explanation: 'الاستجمار: إزالة النجاسة بالأحجار أو ما يقوم مقامها كالمناديل الورقية والمراحيض الحديثة.',
+    goldenRule: 'الاستجمار = إزالة النجاسة بالأحجار أو ما يقوم مقامها.',
+  },
+  {
+    id: 'f1q10', unit: 'fiqh1', lesson: 'f1l3', page: 46,
+    type: 'trueFalse', bloom: 'understand', difficulty: 'easy',
+    bookRef: PDF_46_48,
+    question: 'يجوز الاستجمار بالعظام والروث.',
+    correctAnswer: false,
+    explanation: 'لا يجوز الاستجمار بالعظام والروث لأن النبي ﷺ نهى عن ذلك.',
+    goldenRule: 'يُحرم الاستجمار بالعظام والروث.',
+  },
+  {
+    id: 'f1q11', unit: 'fiqh1', lesson: 'f1l3', page: 47,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'medium',
+    bookRef: PDF_46_48,
+    question: 'أقل عدد مسحات في الاستجمار:',
+    options: [
+      { text: 'ثلاث مسحات', correct: true },
+      { text: 'مسحة واحدة', correct: false },
+      { text: 'مسحتان', correct: false },
+      { text: 'خمس مسحات', correct: false },
+    ],
+    explanation: 'أقل ما يُجزئ في الاستجمار ثلاث مسحات، ويُستحب الإيتار (وتر).',
+    goldenRule: 'الاستجمار: ثلاث مسحات فأكثر، والإيتار مستحب.',
+  },
+  // ص 49-55: إزالة النجاسة عن البدن والملابس والمكان
+  {
+    id: 'f1q12', unit: 'fiqh1', lesson: 'f1l4', page: 49,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_49_51,
+    question: 'كيف تُزال النجاسة عن الثوب؟',
+    options: [
+      { text: 'بغسله بالماء حتى تزول النجاسة وأثرها', correct: true },
+      { text: 'بتعريضه للشمس فقط', correct: false },
+      { text: 'بوضع العطر عليه', correct: false },
+      { text: 'يكفي مجرد تجفيفه', correct: false },
+    ],
+    explanation: 'تُزال النجاسة عن الثوب بغسله بالماء حتى تزول النجاسة وأثرها ورائحتها.',
+    goldenRule: 'إزالة النجاسة عن الثوب = غسل بالماء حتى تزول النجاسة تماماً.',
+  },
+  {
+    id: 'f1q13', unit: 'fiqh1', lesson: 'f1l4', page: 50,
+    type: 'trueFalse', bloom: 'understand', difficulty: 'easy',
+    bookRef: PDF_49_51,
+    question: 'طهارة البدن والثوب والمكان من شروط صحة الصلاة.',
+    correctAnswer: true,
+    explanation: 'من شروط صحة الصلاة: طهارة البدن والثوب ومكان الصلاة من النجاسة.',
+    goldenRule: 'شروط صحة الصلاة: طهارة البدن + الثوب + المكان.',
+  },
+  {
+    id: 'f1q14', unit: 'fiqh1', lesson: 'f1l4', page: 51,
+    type: 'multipleChoice', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_49_51,
+    question: 'وجد سعيد نجاسة على أرض المسجد. ماذا يفعل؟',
+    options: [
+      { text: 'يغسل المكان بالماء حتى تزول النجاسة', correct: true },
+      { text: 'يصلي في مكان آخر ويترك النجاسة', correct: false },
+      { text: 'يضع سجادة فوقها ويصلي', correct: false },
+      { text: 'يكتفي بالتربة اليابسة', correct: false },
+    ],
+    explanation: 'يجب إزالة النجاسة من مكان الصلاة بالغسل بالماء. السجادة لا تكفي إذا كانت النجاسة تحتها.',
+    goldenRule: 'إزالة النجاسة واجبة قبل الصلاة.',
+  },
+  {
+    id: 'f1q15', unit: 'fiqh1', lesson: 'f1l4', page: 52,
+    type: 'matching', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_52_54,
+    question: 'صل كل موضع بطريقة إزالة النجاسة منه:',
+    pairs: [
+      { left: 'الثوب', right: 'يُغسل بالماء حتى تزول النجاسة' },
+      { left: 'أرض المسجد', right: 'تُصبّ عليها الماء وتُغسل' },
+      { left: 'النعل', right: 'يُدلك بالأرض ثم يُغسل' },
+    ],
+    explanation: 'كل موضع له طريقة إزالة مناسبة، والماء هو الأصل في الطهارة.',
+    goldenRule: 'الماء هو الأصل في إزالة النجاسة.',
+  },
+  {
+    id: 'f1q16', unit: 'fiqh1', lesson: 'f1l1', page: 39,
+    type: 'multipleChoice', bloom: 'evaluate', difficulty: 'hard',
+    bookRef: PDF_37_39,
+    question: 'ما الحكمة من الدعاء عند دخول الخلاء؟',
+    options: [
+      { text: 'الاستعاذة من الشياطين التي تحضر في هذه الأماكن', correct: true },
+      { text: 'لا يوجد سبب محدد', correct: false },
+      { text: 'هي عادة قديمة فقط', correct: false },
+      { text: 'لتذكّر الوضوء', correct: false },
+    ],
+    explanation: 'الحكمة: الاستعاذة بالله من الأرواح الخبيثة (الخُبث والخبائث) التي تتواجد في أماكن قضاء الحاجة.',
+    goldenRule: 'دعاء الخلاء = استعاذة من الشياطين الخبيثة.',
+  },
+  {
+    id: 'f1q17', unit: 'fiqh1', lesson: 'f1l2', page: 43,
+    type: 'trueFalse', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_40_42,
+    question: 'يجوز الكلام وذكر الله أثناء قضاء الحاجة.',
+    correctAnswer: false,
+    explanation: 'يُكره الكلام وذكر الله أثناء قضاء الحاجة، ويجب الصمت والتأدب في تلك الحال.',
+    goldenRule: 'الصمت واجب أثناء قضاء الحاجة.',
+  },
+  {
+    id: 'f1q18', unit: 'fiqh1', lesson: 'f1l3', page: 48,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_46_48,
+    question: 'يستخدم محمد المناديل الورقية في الاستجمار. هذا:',
+    options: [
+      { text: 'جائز لأنها تقوم مقام الأحجار', correct: true },
+      { text: 'غير جائز لأن الأحجار فقط مشروعة', correct: false },
+      { text: 'مكروه', correct: false },
+      { text: 'واجب', correct: false },
+    ],
+    explanation: 'يجوز استخدام ما يقوم مقام الأحجار كالمناديل الورقية في الاستجمار، مع تجنب العظام والروث.',
+    goldenRule: 'الاستجمار جائز بكل طاهر مُنقٍّ غير العظام والروث.',
+  },
+  {
+    id: 'f1q19', unit: 'fiqh1', lesson: 'f1l1', page: 40,
+    type: 'matching', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_40_42,
+    question: 'صل كل فعل بالقدم المناسبة:',
+    pairs: [
+      { left: 'دخول الخلاء', right: 'القدم اليسرى' },
+      { left: 'الخروج من الخلاء', right: 'القدم اليمنى' },
+    ],
+    explanation: 'دخول الخلاء بالقدم اليسرى، والخروج بالقدم اليمنى. عكس دخول المسجد وخروجه.',
+    goldenRule: 'الخلاء: دخول يسرى - خروج يمنى. المسجد: دخول يمنى - خروج يسرى.',
+  },
+  {
+    id: 'f1q20', unit: 'fiqh1', lesson: 'f1l4', page: 53,
+    type: 'multipleChoice', bloom: 'analyze', difficulty: 'hard',
+    bookRef: PDF_52_54,
+    question: 'صلّى فهد وعلى ثوبه نجاسة لم يعلم بها. ما حكم صلاته؟',
+    options: [
+      { text: 'صلاته باطلة ويجب إعادتها بعد تطهير الثوب', correct: true },
+      { text: 'صلاته صحيحة لأنه لم يعلم', correct: false },
+      { text: 'يكفيه الاستغفار', correct: false },
+      { text: 'يُعيدها إذا أراد', correct: false },
+    ],
+    explanation: 'من صلّى وعلى ثوبه نجاسة لم يعلم بها، وعلم بعد الصلاة، وجبت إعادة الصلاة عند جمهور العلماء.',
+    goldenRule: 'طهارة الثوب شرط صحة وليس شرط علم فقط.',
+  },
+];

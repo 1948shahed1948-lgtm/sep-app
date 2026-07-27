@@ -1,0 +1,160 @@
+// التربية الإسلامية — الصف الثالث الابتدائي — الفصل الأول
+// الفقه والسلوك — الوحدة الخامسة: صلاة الجماعة
+// المصدر: كتاب التوحيد والفقه والسلوك 1447هـ — ص 77-80
+
+export const PDF_76_78 = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/1540f19a8________76-78.pdf';
+export const PDF_79_END = 'https://media.base44.com/files/public/6a459ddfe6fb4264c098136d/249b3290d________79-end.pdf';
+
+export const FIQH_UNIT5_QUESTIONS = [
+  // ص 77-78: فضل صلاة الجماعة
+  {
+    id: 'f5q1', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_76_78,
+    question: 'بكم درجة تفضل صلاة الجماعة صلاة الفرد؟',
+    options: [
+      { text: 'سبع وعشرين درجة', correct: true },
+      { text: 'عشرين درجة', correct: false },
+      { text: 'خمسين درجة', correct: false },
+      { text: 'سبع درجات', correct: false },
+    ],
+    explanation: 'قال ﷺ: "صلاة الجماعة أفضل من صلاة الفرد بسبع وعشرين درجة". أخرجه البخاري (645).',
+    goldenRule: 'صلاة الجماعة أفضل من صلاة الفرد بسبع وعشرين درجة.',
+  },
+  {
+    id: 'f5q2', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'trueFalse', bloom: 'understand', difficulty: 'easy',
+    bookRef: PDF_76_78,
+    question: 'صلاة الجماعة في المسجد أفضل من الصلاة منفرداً في البيت.',
+    correctAnswer: true,
+    explanation: 'نعم، صلاة الجماعة في المسجد أفضل بسبع وعشرين درجة من صلاة الفرد منفرداً.',
+    goldenRule: 'الجماعة في المسجد = أفضل بسبع وعشرين درجة.',
+  },
+  {
+    id: 'f5q3', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_76_78,
+    question: 'ما الراوي لحديث فضل صلاة الجماعة؟',
+    options: [
+      { text: 'عبدالله بن عمر رضي الله عنهما', correct: true },
+      { text: 'أبو هريرة رضي الله عنه', correct: false },
+      { text: 'أنس بن مالك رضي الله عنه', correct: false },
+      { text: 'ابن مسعود رضي الله عنه', correct: false },
+    ],
+    explanation: 'عن عبدالله بن عمر رضي الله عنهما أن رسول الله ﷺ قال: "صلاة الجماعة أفضل من صلاة الفرد بسبع وعشرين درجة".',
+    goldenRule: 'حديث فضل الجماعة رواه ابن عمر رضي الله عنهما.',
+  },
+  // ص 79-80: حكم صلاة الجماعة للرجال
+  {
+    id: 'f5q4', unit: 'fiqh5', lesson: 'f5l2', page: 79,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_79_END,
+    question: 'ما حكم صلاة الجماعة في المسجد للرجال؟',
+    options: [
+      { text: 'واجبة على الرجال', correct: true },
+      { text: 'سنة مؤكدة فقط', correct: false },
+      { text: 'مستحبة', correct: false },
+      { text: 'واجبة على الجميع', correct: false },
+    ],
+    explanation: 'يجب على الرجال أداء الصلوات الخمس جماعةً في المسجد.',
+    goldenRule: 'صلاة الجماعة = واجبة على الرجال في المسجد.',
+  },
+  {
+    id: 'f5q5', unit: 'fiqh5', lesson: 'f5l2', page: 79,
+    type: 'trueFalse', bloom: 'understand', difficulty: 'easy',
+    bookRef: PDF_79_END,
+    question: 'صلاة الجماعة واجبة على النساء أيضاً في المسجد.',
+    correctAnswer: false,
+    explanation: 'صلاة الجماعة في المسجد واجبة على الرجال، أما المرأة فتُصلّي في بيتها وهو أفضل لها.',
+    goldenRule: 'الجماعة واجبة على الرجال. المرأة الأفضل لها الصلاة في بيتها.',
+  },
+  {
+    id: 'f5q6', unit: 'fiqh5', lesson: 'f5l2', page: 79,
+    type: 'multipleChoice', bloom: 'understand', difficulty: 'medium',
+    bookRef: PDF_79_END,
+    question: 'ما الدليل على وجوب صلاة الجماعة للرجال؟',
+    options: [
+      { text: 'حديث الرجل الأعمى الذي أمره النبي ﷺ بحضور الجماعة رغم عذره', correct: true },
+      { text: 'لا يوجد دليل', correct: false },
+      { text: 'آية صلاة الخوف', correct: false },
+      { text: 'حديث: الصلاة عماد الدين', correct: false },
+    ],
+    explanation: 'عن أبي هريرة قال: أتى النبي ﷺ رجل أعمى وقال: ليس لي قائد يقودني إلى المسجد، فقال ﷺ: "فأجب". أخرجه مسلم (653).',
+    goldenRule: 'النبي ﷺ لم يُرخّص للأعمى في ترك الجماعة، فكيف بالمبصر؟',
+  },
+  {
+    id: 'f5q7', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'multipleChoice', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_76_78,
+    question: 'خالد كان يلعب بالكرة في فناء المنزل فسمع أذان العصر. ماذا يفعل؟',
+    options: [
+      { text: 'يتوقف عن اللعب ويتوضأ ويذهب إلى المسجد لأداء الصلاة جماعة', correct: true },
+      { text: 'يكمل اللعب حتى ينتهي', correct: false },
+      { text: 'يصلي في المنزل ثم يكمل اللعب', correct: false },
+      { text: 'ينتظر أباه', correct: false },
+    ],
+    explanation: 'الصواب: يتوقف عن اللعب فوراً ويتوضأ ويذهب إلى المسجد لأداء صلاة الجماعة.',
+    goldenRule: 'الصلاة أولى من اللعب عند سماع الأذان.',
+  },
+  {
+    id: 'f5q8', unit: 'fiqh5', lesson: 'f5l2', page: 80,
+    type: 'matching', bloom: 'analyze', difficulty: 'medium',
+    bookRef: PDF_79_END,
+    question: 'صل كل حالة بما يناسبها:',
+    pairs: [
+      { left: 'أبي يُصلّي في المسجد', right: 'يُصلّي فيه جميع الطلاب' },
+      { left: 'مُصلّى المدرسة', right: 'تُصلّي في المنزل' },
+      { left: 'المرأة', right: 'يجب عليه الصلاة جماعة خمس مرات' },
+      { left: 'تجب صلاة الجماعة', right: 'على الرجال' },
+    ],
+    explanation: 'الرجل يُصلّي في المسجد جماعة. المرأة في المنزل. المدرسة مُصلّى مشترك.',
+    goldenRule: 'كل مكان له ما يناسبه من أحكام الصلاة.',
+  },
+  {
+    id: 'f5q9', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'multipleChoice', bloom: 'evaluate', difficulty: 'hard',
+    bookRef: PDF_76_78,
+    question: 'ما فوائد صلاة الجماعة؟',
+    options: [
+      { text: 'التعارف بين المسلمين وتوحيد صفوفهم وتحقيق الأجر العظيم', correct: true },
+      { text: 'تقليل وقت الصلاة', correct: false },
+      { text: 'لا توجد فوائد', correct: false },
+      { text: 'تخفيف متطلبات الصلاة', correct: false },
+    ],
+    explanation: 'من فوائد صلاة الجماعة: التعارف بين المسلمين، وتوحيد الصفوف، وتحقيق الأجر العظيم (سبع وعشرون درجة)، والتكافل الاجتماعي.',
+    goldenRule: 'صلاة الجماعة = تعارف + وحدة + أجر + تكافل.',
+  },
+  {
+    id: 'f5q10', unit: 'fiqh5', lesson: 'f5l2', page: 79,
+    type: 'trueFalse', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_79_END,
+    question: 'يجب على الرجال أداء الصلوات الخمس جماعة في المسجد.',
+    correctAnswer: true,
+    explanation: 'نعم، يجب على الرجال أداء الصلوات الخمس جماعة في المسجد بدليل حديث الأعمى.',
+    goldenRule: 'الصلوات الخمس جماعة في المسجد = واجب على الرجال.',
+  },
+  {
+    id: 'f5q11', unit: 'fiqh5', lesson: 'f5l1', page: 78,
+    type: 'multipleChoice', bloom: 'remember', difficulty: 'easy',
+    bookRef: PDF_76_78,
+    question: 'في أي كتاب أُخرج حديث فضل صلاة الجماعة بسبع وعشرين درجة؟',
+    options: [
+      { text: 'صحيح البخاري', correct: true },
+      { text: 'سنن أبي داود', correct: false },
+      { text: 'صحيح مسلم', correct: false },
+      { text: 'سنن الترمذي', correct: false },
+    ],
+    explanation: 'حديث "صلاة الجماعة أفضل من صلاة الفرد بسبع وعشرين درجة" أخرجه البخاري (645).',
+    goldenRule: 'حديث فضل الجماعة = صحيح البخاري.',
+  },
+  {
+    id: 'f5q12', unit: 'fiqh5', lesson: 'f5l2', page: 80,
+    type: 'ordering', bloom: 'apply', difficulty: 'medium',
+    bookRef: PDF_79_END,
+    question: 'رتّب خطوات خالد الصحيحة عند سماع الأذان:',
+    items: ['الذهاب إلى المسجد', 'الوقوف عن اللعب', 'أداء صلاة الجماعة', 'الوضوء'],
+    correctOrder: [1, 3, 0, 2],
+    explanation: 'الترتيب: الوقوف ← الوضوء ← الذهاب إلى المسجد ← أداء الصلاة جماعة.',
+    goldenRule: 'عند الأذان: توقّف ← تطهّر ← انطلق ← صلّ جماعة.',
+  },
+];
