@@ -1,0 +1,184 @@
+{
+  "name": "StandardizedQuestion",
+  "type": "object",
+  "properties": {
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "diagnostic",
+        "criterion",
+        "adaptive"
+      ],
+      "description": "Type of standardized test this question belongs to"
+    },
+    "grade": {
+      "type": "number",
+      "description": "Grade level 1-12"
+    },
+    "topic_ar": {
+      "type": "string",
+      "description": "Skill/topic label in Arabic (used for diagnostic weak-area breakdown)"
+    },
+    "topic_en": {
+      "type": "string",
+      "description": "Skill/topic label in English"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium"
+    },
+    "question_type": {
+      "type": "string",
+      "enum": [
+        "multiple_choice",
+        "matching",
+        "ordering",
+        "classify"
+      ],
+      "default": "multiple_choice",
+      "description": "multiple_choice for intermediate/secondary; matching/ordering/classify interactive types for primary"
+    },
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index of the correct option (multiple_choice)"
+    },
+    "explanation_ar": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "matching_pairs_ar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "left": {
+            "type": "string"
+          },
+          "right": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Pairs to connect (matching type)"
+    },
+    "matching_pairs_en": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "left": {
+            "type": "string"
+          },
+          "right": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ordering_items_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Items in CORRECT order (ordering type)"
+    },
+    "ordering_items_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "classify_categories_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Category box labels (classify type)"
+    },
+    "classify_categories_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "classify_items_ar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "correct_category": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Items with their correct category index (classify type)"
+    },
+    "classify_items_en": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "correct_category": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "test_type",
+    "grade",
+    "question_ar",
+    "question_en",
+    "question_type"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

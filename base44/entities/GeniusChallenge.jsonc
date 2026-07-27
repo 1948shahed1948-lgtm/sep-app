@@ -1,0 +1,106 @@
+{
+  "name": "GeniusChallenge",
+  "type": "object",
+  "properties": {
+    "grade": {
+      "type": "number",
+      "description": "Grade level 1-12"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "intermediate",
+        "secondary"
+      ],
+      "description": "Educational stage"
+    },
+    "subject_ar": {
+      "type": "string"
+    },
+    "subject_en": {
+      "type": "string"
+    },
+    "topic_ar": {
+      "type": "string",
+      "description": "Skill/concept the question tests"
+    },
+    "topic_en": {
+      "type": "string"
+    },
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index of the correct option (0-3)"
+    },
+    "explanation_ar": {
+      "type": "string",
+      "description": "Detailed step-by-step explanation of the correct solution"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "common_mistake_ar": {
+      "type": "string",
+      "description": "Detailed description of the common trap/mistake and why students fall for it"
+    },
+    "common_mistake_en": {
+      "type": "string"
+    },
+    "golden_rule_ar": {
+      "type": "string",
+      "description": "Golden rule / key takeaway"
+    },
+    "golden_rule_en": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "grade",
+    "stage",
+    "subject_ar",
+    "subject_en",
+    "question_ar",
+    "question_en",
+    "options_ar",
+    "options_en",
+    "correct_answer",
+    "explanation_ar",
+    "explanation_en"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

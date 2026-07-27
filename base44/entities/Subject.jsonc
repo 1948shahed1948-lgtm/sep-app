@@ -1,0 +1,62 @@
+{
+  "name": "Subject",
+  "type": "object",
+  "properties": {
+    "name_ar": {
+      "type": "string",
+      "description": "Subject name in Arabic"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Subject name in English"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon identifier"
+    },
+    "curriculum": {
+      "type": "string",
+      "enum": [
+        "national",
+        "international"
+      ],
+      "description": "Curriculum type"
+    },
+    "grade": {
+      "type": "string",
+      "description": "Grade level e.g. grade_1, grade_2..."
+    },
+    "color": {
+      "type": "string",
+      "description": "Theme color hex"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name_ar",
+    "name_en",
+    "curriculum",
+    "grade"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

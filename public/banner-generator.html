@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مولّد بانر صفحة المطوِّر — Google Play</title>
+<style>
+  :root { --navy:#0C1738; --beige:#faf8f0; --gold:#f59e0b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f4f4f5; color:#1e293b; padding:24px; }
+  .card { max-width:920px; margin:0 auto; background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,.08); padding:28px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:#64748b; font-size:13px; margin-bottom:22px; }
+  label { display:block; font-size:13px; font-weight:600; margin:14px 0 6px; }
+  input[type=text] { width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; font-family:inherit; }
+  .row { display:flex; gap:14px; flex-wrap:wrap; }
+  .row > div { flex:1; min-width:200px; }
+  .opts { display:flex; gap:18px; align-items:center; flex-wrap:wrap; margin-top:10px; font-size:13px; }
+  button { background:var(--navy); color:#fff; border:none; padding:12px 22px; border-radius:10px; font-size:15px; font-weight:700; cursor:pointer; margin-top:18px; }
+  button:disabled { opacity:.5; cursor:default; }
+  #status { margin-top:14px; font-size:13px; color:#16a34a; min-height:18px; }
+  .preview-wrap { margin-top:20px; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; }
+  .preview-wrap img { width:100%; display:block; }
+  .note { margin-top:14px; font-size:12px; color:#94a3b8; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎨 مولّد بانر صفحة المطوِّر (Google Play)</h1>
+    <div class="sub">يُنتج صورة بالأبعاد المضبوطة 4096×2304 بحجم أقل من 2 ميجا — جاهزة للرفع مباشرة.</div>
+
+    <div class="row">
+      <div>
+        <label>اسم المطوِّر (اختياري — يظهر يمين البانر)</label>
+        <input type="text" id="devName" value="بوابة الأسئلة بلس" />
+      </div>
+      <div>
+        <label>الشعار (رابط PNG/JPG)</label>
+        <input type="text" id="logoUrl" value="https://media.base44.com/images/public/6a459ddfe6fb4264c098136d/fc4740d8b_image.png" />
+      </div>
+    </div>
+
+    <div class="opts">
+      <label style="margin:0"><input type="checkbox" id="addGradient" checked> تدرّج كحلي ↔ بيج</label>
+      <label style="margin:0"><input type="checkbox" id="addStars" checked> زخرفة سعودية خفيفة</label>
+      <label style="margin:0">جودة JPEG: <select id="quality">
+        <option value="0.85">85 (الأفضل)</option>
+        <option value="0.75" selected>75 (متوازن)</option>
+        <option value="0.65">65 (أصغر حجماً)</option>
+      </select></label>
+    </div>
+
+    <button id="generate">توليد ومعاينة البانر</button>
+    <button id="download" disabled>⬇️ تحميل JPEG (4096×2304)</button>
+    <div id="status"></div>
+
+    <div class="preview-wrap"><img id="preview" alt="معاينة" /></div>
+    <div class="note">ملاحظة: لو لم يُحمّل الشعار بسبب قيود المتصفح (CORS)، استخدم الزر "توليد" كرابط مباشر للصورة المربعة الأصلية.</div>
+  </div>
+
+<script>
+const W = 4096, H = 2304;
+const canvas = document.createElement('canvas');
+canvas.width = W; canvas.height = H;
+const ctx = canvas.getContext('2d');
+
+function lerp(a,b,t){return a+(b-a)*t;}
+function hexToRgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+
+function drawGradient(){
+  const navy = hexToRgb('#0C1738'), beige = hexToRgb('#faf8f0');
+  const g = ctx.createLinearGradient(0,0,W,H);
+  g.addColorStop(0, `rgb(${navy.join(',')})`);
+  g.addColorStop(.5, `rgb(${lerp(navy[0],beige[0],.5)|0},${lerp(navy[1],beige[1],.5)|0},${lerp(navy[2],beige[2],.5)|0})`);
+  g.addColorStop(1, `rgb(${beige.join(',')})`);
+  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+}
+
+function drawStars(){
+  ctx.save();
+  ctx.globalAlpha = 0.06;
+  ctx.fillStyle = '#f59e0b';
+  // simple 8-point stars in corners
+  const pts = [[300,300],[300,2000],[3700,300],[3700,2000],[600,1100]];
+  for(const [cx,cy] of pts){
+    const r=140;
+    ctx.beginPath();
+    for(let i=0;i<8;i++){
+      const ang=(i*Math.PI)/4;
+      const rr = i%2===0? r : r*0.42;
+      const x=cx+Math.cos(ang)*rr, y=cy+Math.sin(ang)*rr;
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    ctx.closePath(); ctx.fill();
+  }
+  ctx.restore();
+}
+
+function drawLogo(img){
+  // place circular logo on left-center, fit height with padding
+  const target = H*0.62;
+  const ratio = img.width/img.height;
+  const dw = target*ratio, dh = target;
+  const dx = W*0.08, dy = (H-dh)/2;
+  // golden glow ring
+  ctx.save();
+  const grd = ctx.createRadialGradient(dx+dw/2, dy+dh/2, dh*0.3, dx+dw/2, dy+dh/2, dh*0.62);
+  grd.addColorStop(0,'rgba(245,158,11,0.35)');
+  grd.addColorStop(1,'rgba(245,158,11,0)');
+  ctx.fillStyle=grd;
+  ctx.beginPath(); ctx.arc(dx+dw/2, dy+dh/2, dh*0.62, 0, Math.PI*2); ctx.fill();
+  ctx.restore();
+  // white ring + logo
+  ctx.save();
+  ctx.beginPath(); ctx.arc(dx+dw/2, dy+dh/2, dh/2+18, 0, Math.PI*2);
+  ctx.fillStyle='#fff'; ctx.fill();
+  ctx.beginPath(); ctx.arc(dx+dw/2, dy+dh/2, dh/2, 0, Math.PI*2); ctx.clip();
+  ctx.drawImage(img, dx, dy, dw, dh);
+  ctx.restore();
+}
+
+function drawDevName(name){
+  if(!name) return;
+  ctx.save();
+  ctx.fillStyle = '#0C1738';
+  ctx.textAlign = 'right';
+  ctx.font = '900 130px "Segoe UI", Tahoma, sans-serif';
+  ctx.fillText(name, W - W*0.08, H/2 + 20);
+  ctx.fillStyle = '#64748b';
+  ctx.font = '600 56px "Segoe UI", Tahoma, sans-serif';
+  ctx.fillText('بنوك الأسئلة والاختبارات المعيارية', W - W*0.08, H/2 + 110);
+  ctx.restore();
+}
+
+async function loadLogo(url){
+  return new Promise((res,rej)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>res(img);
+    img.onerror = rej;
+    img.src = url;
+  });
+}
+
+async function build(){
+  const status = document.getElementById('status');
+  status.textContent = 'جاري التوليد...';
+  try {
+    drawGradient();
+    if(document.getElementById('addStars').checked) drawStars();
+    try {
+      const logo = await loadLogo(document.getElementById('logoUrl').value.trim());
+      drawLogo(logo);
+    } catch(e){ status.textContent = '⚠️ لم يُحمّل الشعار — تم التوليد بدون شعار (استبدل الرابط أو حمّله محلياً).'; }
+    drawDevName(document.getElementById('devName').value.trim());
+
+    const q = parseFloat(document.getElementById('quality').value);
+    const blob = await new Promise(r=>canvas.toBlob(r,'image/jpeg',q));
+    const url = URL.createObjectURL(blob);
+    document.getElementById('preview').src = url;
+    window._bannerBlob = blob;
+    const sizeMB = (blob.size/1024/1024).toFixed(2);
+    status.textContent = `✅ جاهز — الأبعاد ${W}×${H}، الحجم ${sizeMB} ميجا.`;
+    document.getElementById('download').disabled = false;
+  } catch(err){
+    status.textContent = 'خطأ: ' + err.message;
+  }
+}
+
+document.getElementById('generate').onclick = build;
+document.getElementById('download').onclick = ()=>{
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(window._bannerBlob);
+  a.download = 'developer-banner-4096x2304.jpg';
+  a.click();
+};
+</script>
+</body>
+</html>

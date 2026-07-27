@@ -1,0 +1,66 @@
+{
+  "name": "CurriculumUnit",
+  "type": "object",
+  "properties": {
+    "grade": {
+      "type": "string",
+      "description": "Grade level e.g. grade_1 ... grade_12"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to Subject"
+    },
+    "subject_name_ar": {
+      "type": "string"
+    },
+    "subject_name_en": {
+      "type": "string"
+    },
+    "unit_title_ar": {
+      "type": "string"
+    },
+    "unit_title_en": {
+      "type": "string"
+    },
+    "lesson_title_ar": {
+      "type": "string"
+    },
+    "lesson_title_en": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "grade",
+    "subject_id",
+    "unit_title_ar",
+    "lesson_title_ar"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

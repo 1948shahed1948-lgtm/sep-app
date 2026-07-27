@@ -1,0 +1,34 @@
+{
+  "name": "بوابة الأسئلة بلس",
+  "short_name": "بوابة الأسئلة",
+  "description": "بنوك الأسئلة والاختبارات المعيارية السعودية - منصة تعليمية شاملة تجمع بين النظام الوطني والدولي مع تدريب تفاعلي وتقييم ذكي للمهارات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf8f0",
+  "theme_color": "#12204B",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6a459ddfe6fb4264c098136d/9fabed539_generated_image.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://media.base44.com/images/public/6a459ddfe6fb4264c098136d/9fabed539_generated_image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://media.base44.com/images/public/6a459ddfe6fb4264c098136d/9fabed539_generated_image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education", "productivity"]
+}

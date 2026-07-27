@@ -1,0 +1,63 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "title_ar": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "description_ar": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to Subject"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    },
+    "content_ar": {
+      "type": "string",
+      "description": "Lesson content in Arabic"
+    },
+    "content_en": {
+      "type": "string",
+      "description": "Lesson content in English"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "duration_minutes": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "title_ar",
+    "title_en",
+    "subject_id"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

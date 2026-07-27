@@ -1,0 +1,105 @@
+{
+  "name": "RealLifeConnection",
+  "type": "object",
+  "properties": {
+    "title_ar": {
+      "type": "string",
+      "description": "\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0631\u0628\u0637 \u0628\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string",
+      "enum": [
+        "neom",
+        "the_line",
+        "red_sea",
+        "industrial_valley",
+        "qiddiya",
+        "rosnam",
+        "vision2030"
+      ],
+      "description": "\u0645\u0634\u0631\u0648\u0639 \u0631\u0624\u064a\u0629 2030 \u0627\u0644\u0645\u0631\u062a\u0628\u0637"
+    },
+    "project_ar": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0634\u0631\u0648\u0639 \u0628\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+    },
+    "project_en": {
+      "type": "string"
+    },
+    "subject_ar": {
+      "type": "string"
+    },
+    "subject_en": {
+      "type": "string"
+    },
+    "grade": {
+      "type": "string",
+      "description": "\u0627\u0644\u0635\u0641 \u0627\u0644\u062f\u0631\u0627\u0633\u064a \u0627\u0644\u0645\u0631\u062a\u0628\u0637 \u0623\u0648 'general'"
+    },
+    "lesson_topic_ar": {
+      "type": "string",
+      "description": "\u0627\u0644\u0645\u0641\u0647\u0648\u0645/\u0627\u0644\u062f\u0631\u0633 \u0627\u0644\u0630\u064a \u064a\u064f\u0631\u0628\u0637"
+    },
+    "lesson_topic_en": {
+      "type": "string"
+    },
+    "question_ar": {
+      "type": "string",
+      "description": "\u0633\u0624\u0627\u0644: \u0623\u064a\u0646 \u0646\u0633\u062a\u062e\u062f\u0645 \u0647\u0630\u0627 \u0627\u0644\u062f\u0631\u0633 \u0641\u064a \u062d\u064a\u0627\u062a\u0646\u0627\u061f"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "explanation_ar": {
+      "type": "string",
+      "description": "\u0634\u0631\u062d \u0643\u064a\u0641 \u064a\u064f\u0637\u0628\u0651\u0642 \u0627\u0644\u0645\u0641\u0647\u0648\u0645 \u0641\u064a \u0627\u0644\u0645\u0634\u0631\u0648\u0639"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "vision_goal_ar": {
+      "type": "string",
+      "description": "\u0647\u062f\u0641 \u0631\u0624\u064a\u0629 2030 \u0627\u0644\u0645\u0631\u062a\u0628\u0637"
+    },
+    "vision_goal_en": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title_ar",
+    "title_en",
+    "project",
+    "question_ar",
+    "question_en",
+    "explanation_ar",
+    "explanation_en"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

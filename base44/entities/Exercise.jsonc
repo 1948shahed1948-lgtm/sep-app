@@ -1,0 +1,87 @@
+{
+  "name": "Exercise",
+  "type": "object",
+  "properties": {
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "multiple_choice",
+        "true_false",
+        "fill_blank",
+        "matching",
+        "ordering"
+      ],
+      "default": "multiple_choice"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index or value of correct answer"
+    },
+    "explanation_ar": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "skill_id": {
+      "type": "string",
+      "description": "Reference to Skill"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium"
+    },
+    "points": {
+      "type": "number",
+      "default": 10
+    }
+  },
+  "required": [
+    "question_ar",
+    "question_en",
+    "type",
+    "correct_answer",
+    "skill_id"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

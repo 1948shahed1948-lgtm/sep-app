@@ -1,0 +1,139 @@
+{
+  "name": "QuestionBankQuestion",
+  "type": "object",
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "description": "Reference to Subject"
+    },
+    "grade": {
+      "type": "string",
+      "description": "Grade level e.g. grade_1, grade_2..."
+    },
+    "unit_title_ar": {
+      "type": "string"
+    },
+    "unit_title_en": {
+      "type": "string"
+    },
+    "lesson_title_ar": {
+      "type": "string"
+    },
+    "lesson_title_en": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium"
+    },
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index of the correct option"
+    },
+    "explanation_ar": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "solution_steps_ar": {
+      "type": "string",
+      "description": "Step-by-step solution shown on the blackboard"
+    },
+    "solution_steps_en": {
+      "type": "string"
+    },
+    "golden_rule_ar": {
+      "type": "string",
+      "description": "Golden rule summary with crown"
+    },
+    "golden_rule_en": {
+      "type": "string"
+    },
+    "feedback_question_ar": {
+      "type": "string",
+      "description": "Follow-up feedback question"
+    },
+    "feedback_question_en": {
+      "type": "string"
+    },
+    "feedback_options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "feedback_options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "feedback_correct_answer": {
+      "type": "string",
+      "description": "Index of correct option for feedback question"
+    },
+    "feedback_explanation_ar": {
+      "type": "string"
+    },
+    "feedback_explanation_en": {
+      "type": "string"
+    },
+    "page_number": {
+      "type": "number",
+      "description": "Textbook page number where the question topic appears"
+    },
+    "paragraph": {
+      "type": "string",
+      "description": "Paragraph/section reference within the page"
+    }
+  },
+  "required": [
+    "subject_id",
+    "grade",
+    "question_ar",
+    "question_en",
+    "correct_answer"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

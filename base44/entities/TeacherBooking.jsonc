@@ -1,0 +1,122 @@
+{
+  "name": "TeacherBooking",
+  "type": "object",
+  "properties": {
+    "teacher_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 \u0627\u0644\u0645\u0639\u0644\u0645 (user_id)"
+    },
+    "teacher_name": {
+      "type": "string"
+    },
+    "student_user_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 \u062d\u0633\u0627\u0628 \u0627\u0644\u0637\u0627\u0644\u0628 (user_id) \u2014 \u0644\u0631\u0628\u0637 \u0627\u0644\u062d\u062c\u0632 \u0628\u062d\u0633\u0627\u0628 \u0627\u0644\u0637\u0627\u0644\u0628 \u0648\u0639\u0631\u0636 \u0633\u062c\u0644\u0647"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "student_phone": {
+      "type": "string"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "preferred_date": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "completed",
+        "canceled"
+      ],
+      "default": "pending",
+      "description": "pending=\u0628\u0627\u0646\u062a\u0638\u0627\u0631 \u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0645\u0639\u0644\u0645\u060c approved=\u0627\u0639\u062a\u064f\u0645\u062f \u0648\u0623\u064f\u0636\u064a\u0641 \u0627\u0644\u0631\u0627\u0628\u0637\u060c completed=\u0627\u0643\u062a\u0645\u0644\u062a\u060c canceled=\u0625\u0644\u063a\u0627\u0621"
+    },
+    "session_link": {
+      "type": "string",
+      "description": "\u0631\u0627\u0628\u0637 \u0627\u0644\u062c\u0644\u0633\u0629 (Zoom/Meet) \u064a\u0636\u064a\u0641\u0647 \u0627\u0644\u0645\u0639\u0644\u0645 \u0639\u0646\u062f \u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f"
+    },
+    "materials_url": {
+      "type": "string",
+      "description": "\u0631\u0627\u0628\u0637 \u0645\u0644\u0641\u0627\u062a \u0627\u0644\u062c\u0644\u0633\u0629 (PDF) \u062a\u0631\u0641\u0639\u0647\u0627 \u0627\u0644\u0645\u0639\u0644\u0645"
+    },
+    "session_price": {
+      "type": "number",
+      "description": "\u0633\u0639\u0631 \u0627\u0644\u062c\u0644\u0633\u0629 \u0628\u0627\u0644\u0631\u064a\u0627\u0644 \u0627\u0644\u0633\u0639\u0648\u062f\u064a \u0627\u0644\u0630\u064a \u064a\u062d\u062f\u062f\u0647 \u0627\u0644\u0645\u0639\u0644\u0645 \u0639\u0646\u062f \u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f",
+      "default": 0
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "unpaid",
+        "paid",
+        "refunded"
+      ],
+      "default": "unpaid",
+      "description": "unpaid=\u063a\u064a\u0631 \u0645\u062f\u0641\u0648\u0639\u060c paid=\u062a\u0645 \u0627\u0644\u062f\u0641\u0639 \u0639\u0628\u0631 Moyasar\u060c refunded=\u0645\u0633\u062a\u0631\u062f\u0629"
+    },
+    "moyasar_payment_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 \u0639\u0645\u0644\u064a\u0629 \u0627\u0644\u062f\u0641\u0639 \u0641\u064a Moyasar \u0639\u0646\u062f \u062a\u0623\u0643\u064a\u062f \u0627\u0644\u062f\u0641\u0639"
+    }
+  },
+  "required": [
+    "teacher_id",
+    "student_name",
+    "student_phone",
+    "subject_name",
+    "status"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "data.teacher_id": "{{user.id}}"
+        },
+        {
+          "data.student_user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.teacher_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.teacher_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

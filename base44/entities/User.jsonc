@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "phone": {
+      "type": "string",
+      "description": "Student's own WhatsApp number in E.164 format (e.g. 9665xxxxxxxx) to receive weekly performance reports"
+    },
+    "parent_phone": {
+      "type": "string",
+      "description": "Parent's WhatsApp number in E.164 format (e.g. 9665xxxxxxxx) to receive weekly performance reports"
+    }
+  },
+  "required": [
+    "role"
+  ],
+  "name": "User",
+  "type": "object"
+}

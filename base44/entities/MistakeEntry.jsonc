@@ -1,0 +1,126 @@
+{
+  "name": "MistakeEntry",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_answer": {
+      "type": "string",
+      "description": "Index of the option the user chose"
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index of the correct option"
+    },
+    "explanation_ar": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "question_bank",
+        "quiz",
+        "aptitude",
+        "standardized"
+      ],
+      "default": "question_bank"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Optional student note on why the mistake happened"
+    },
+    "confidence": {
+      "type": "number",
+      "default": 0,
+      "description": "0=none, 1=low, 2=medium, 3=high (confident-but-wrong flag)"
+    },
+    "is_resolved": {
+      "type": "boolean",
+      "default": false
+    },
+    "review_count": {
+      "type": "number",
+      "default": 0
+    },
+    "next_review_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "user_id",
+    "question_ar",
+    "question_en",
+    "correct_answer",
+    "source"
+  ],
+  "rls": {
+    "create": {
+      "data.user_id": "{{user.id}}"
+    },
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "AptitudeQuestion",
+  "type": "object",
+  "properties": {
+    "section": {
+      "type": "string",
+      "enum": [
+        "verbal",
+        "quantitative"
+      ]
+    },
+    "topic_index": {
+      "type": "number",
+      "description": "Index of the topic within the section"
+    },
+    "grade": {
+      "type": "number",
+      "description": "Grade level 1-12"
+    },
+    "question_ar": {
+      "type": "string"
+    },
+    "question_en": {
+      "type": "string"
+    },
+    "options_ar": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "options_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "correct_answer": {
+      "type": "string",
+      "description": "Index of the correct option"
+    },
+    "explanation_ar": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "section",
+    "topic_index",
+    "grade",
+    "question_ar",
+    "question_en",
+    "correct_answer"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

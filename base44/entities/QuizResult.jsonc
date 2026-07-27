@@ -1,0 +1,101 @@
+{
+  "name": "QuizResult",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "skill_id": {
+      "type": "string"
+    },
+    "lesson_id": {
+      "type": "string"
+    },
+    "quiz_type": {
+      "type": "string",
+      "enum": [
+        "skill_quiz",
+        "lesson_quiz",
+        "aptitude_test"
+      ],
+      "default": "skill_quiz"
+    },
+    "total_questions": {
+      "type": "number"
+    },
+    "correct_count": {
+      "type": "number"
+    },
+    "wrong_count": {
+      "type": "number"
+    },
+    "score_percentage": {
+      "type": "number"
+    },
+    "time_taken_seconds": {
+      "type": "number"
+    },
+    "errors_detail": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Array of {exercise_id, user_answer, correct_answer}"
+    },
+    "weakness_detected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills flagged as weak"
+    }
+  },
+  "required": [
+    "user_id",
+    "total_questions",
+    "correct_count",
+    "wrong_count",
+    "score_percentage"
+  ],
+  "rls": {
+    "create": {
+      "data.user_id": "{{user.id}}"
+    },
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
