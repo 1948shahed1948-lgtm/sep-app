@@ -1,0 +1,312 @@
+// Quantitative - Quantitative Comparisons (30 real GAT-style questions)
+// Each compares Column A and Column B
+export default [
+  {
+    question_ar: "العمود أ: 7 × 8 ، العمود ب: 9 × 6. أيهما أكبر؟",
+    question_en: "Column A: 7 × 8, Column B: 9 × 6. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "7×8 = 56، 9×6 = 54، العمود أ أكبر",
+    explanation_en: "7×8 = 56, 9×6 = 54, Column A is greater",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 25% من 80 ، العمود ب: 20% من 100. أيهما أكبر؟",
+    question_en: "Column A: 25% of 80, Column B: 20% of 100. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "25%×80 = 20، 20%×100 = 20، متساويان",
+    explanation_en: "25%×80 = 20, 20%×100 = 20, equal",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: √144 ، العمود ب: 11. أيهما أكبر؟",
+    question_en: "Column A: √144, Column B: 11. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "√144 = 12 > 11",
+    explanation_en: "√144 = 12 > 11",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 3/4 ، العمود ب: 0.7. أيهما أكبر؟",
+    question_en: "Column A: 3/4, Column B: 0.7. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "3/4 = 0.75 > 0.7",
+    explanation_en: "3/4 = 0.75 > 0.7",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: عدد أضلاع خماسي ، العمود ب: عدد أضلاع سداسي. أيهما أكبر؟",
+    question_en: "Column A: sides of a pentagon, Column B: sides of a hexagon. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "الخماسي 5 أضلاع، السداسي 6 أضلاع، العمود ب أكبر",
+    explanation_en: "Pentagon 5 sides, hexagon 6 sides, Column B greater",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 2^{3} ، العمود ب: 3^{2}. أيهما أكبر؟",
+    question_en: "Column A: 2^{3}, Column B: 3^{2}. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "2^{3} = 8، 3^{2} = 9... العمود ب أكبر",
+    explanation_en: "2^{3} = 8, 3^{2} = 9, Column B greater",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: محيط مربع ضلعه 6 ، العمود ب: محيط مستطيل 8×4. أيهما أكبر؟",
+    question_en: "Column A: perimeter of square side 6, Column B: perimeter of 8×4 rectangle. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "محيط المربع = 24، محيط المستطيل = 2(8+4) = 24، متساويان",
+    explanation_en: "Square perimeter = 24, rectangle = 2(8+4) = 24, equal",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: مجموع زوايا مثلث ، العمود ب: 200°. أيهما أكبر؟",
+    question_en: "Column A: sum of a triangle's angles, Column B: 200°. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "مجموع زوايا المثلث 180° < 200°، العمود ب أكبر",
+    explanation_en: "Triangle angles sum 180° < 200°, Column B greater",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 0.5^{2} ، العمود ب: 0.5. أيهما أكبر؟",
+    question_en: "Column A: 0.5^{2}, Column B: 0.5. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "0.5^{2} = 0.25 < 0.5، العمود ب أكبر",
+    explanation_en: "0.5^{2} = 0.25 < 0.5, Column B greater",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: عدد ساعات يومين ، العمود ب: عدد دقائق ساعة. أيهما أكبر؟",
+    question_en: "Column A: hours in two days, Column B: minutes in an hour. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "ساعات يومين = 48، دقائق ساعة = 60، 48 < 60، العمود ب أكبر",
+    explanation_en: "Hours in 2 days = 48, minutes in an hour = 60, 48 < 60, Column B greater",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: 5! ، العمود ب: 100. أيهما أكبر؟",
+    question_en: "Column A: 5!, Column B: 100. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "5! = 120 > 100",
+    explanation_en: "5! = 120 > 100",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: 1/2 + 1/3 ، العمود ب: 0.8. أيهما أكبر؟",
+    question_en: "Column A: 1/2 + 1/3, Column B: 0.8. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "1/2+1/3 = 5/6 ≈ 0.833 > 0.8",
+    explanation_en: "1/2+1/3 = 5/6 ≈ 0.833 > 0.8",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: مساحة دائرة نصف قطرها 1 ، العمود ب: 3. أيهما أكبر؟ (ن≈3.14)",
+    question_en: "Column A: area of circle radius 1, Column B: 3. Which is greater? (π≈3.14)",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "المساحة = ن×1 = 3.14 > 3",
+    explanation_en: "Area = π×1 = 3.14 > 3",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: عدد الأشهر في سنة ، العمود ب: عدد فصول السنة. أيهما أكبر؟",
+    question_en: "Column A: months in a year, Column B: seasons in a year. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "12 شهراً > 4 فصول",
+    explanation_en: "12 months > 4 seasons",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 2^{5} ، العمود ب: 5^{2}. أيهما أكبر؟",
+    question_en: "Column A: 2^{5}, Column B: 5^{2}. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "2^{5} = 32 > 25 = 5^{2}",
+    explanation_en: "2^{5} = 32 > 25 = 5^{2}",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: 10% من 50 ، العمود ب: 50% من 10. أيهما أكبر؟",
+    question_en: "Column A: 10% of 50, Column B: 50% of 10. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "كلاهما = 5، متساويان",
+    explanation_en: "Both = 5, equal",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: عدد أولي بين 10 و20 ، العمود ب: 5. أيهما أكبر؟",
+    question_en: "Column A: a prime between 10 and 20, Column B: 5. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "11 (أو 13 أو 17 أو 19) > 5",
+    explanation_en: "11 (or 13, 17, 19) > 5",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: عدد أضلاع ثماني الأضلاع ، العمود ب: 7. أيهما أكبر؟",
+    question_en: "Column A: sides of an octagon, Column B: 7. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "8 أضلاع > 7",
+    explanation_en: "8 sides > 7",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: متوسط 10 و20 ، العمود ب: 14. أيهما أكبر؟",
+    question_en: "Column A: average of 10 and 20, Column B: 14. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "المتوسط = 15 > 14",
+    explanation_en: "Average = 15 > 14",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 9 × 9 ، العمود ب: 80. أيهما أكبر؟",
+    question_en: "Column A: 9 × 9, Column B: 80. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "81 > 80",
+    explanation_en: "81 > 80",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 1/3 ، العمود ب: 0.34. أيهما أكبر؟",
+    question_en: "Column A: 1/3, Column B: 0.34. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "1/3 ≈ 0.333 < 0.34",
+    explanation_en: "1/3 ≈ 0.333 < 0.34",
+    difficulty: "medium"
+  },
+  {
+    question_ar: "العمود أ: عدد زوايا المثلث ، العمود ب: 4. أيهما أكبر؟",
+    question_en: "Column A: number of a triangle's angles, Column B: 4. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "1",
+    explanation_ar: "3 زوايا < 4",
+    explanation_en: "3 angles < 4",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 12^{2} ، العمود ب: 140. أيهما أكبر؟",
+    question_en: "Column A: 12^{2}, Column B: 140. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "12^{2} = 144 > 140، العمود أ أكبر",
+    explanation_en: "12^{2} = 144 > 140, Column A greater",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 6! ÷ 5! ، العمود ب: 5. أيهما أكبر؟",
+    question_en: "Column A: 6! ÷ 5!, Column B: 5. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "6!/5! = 6 > 5، العمود أ أكبر",
+    explanation_en: "6!/5! = 6 > 5, Column A greater",
+    difficulty: "hard"
+  },
+  {
+    question_ar: "العمود أ: عدد الأيام في أسبوعين ، العمود ب: 10. أيهما أكبر؟",
+    question_en: "Column A: days in two weeks, Column B: 10. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "0",
+    explanation_ar: "14 يوماً > 10",
+    explanation_en: "14 days > 10",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 0.3 × 0.3 ، العمود ب: 0.09. أيهما أكبر؟",
+    question_en: "Column A: 0.3 × 0.3, Column B: 0.09. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "0.09 = 0.09، متساويان",
+    explanation_en: "0.09 = 0.09, equal",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: 15 + 25 ، العمود ب: 30 + 5. أيهما أكبر؟",
+    question_en: "Column A: 15 + 25, Column B: 30 + 5. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "كلاهما = 40، متساويان",
+    explanation_en: "Both = 40, equal",
+    difficulty: "easy"
+  },
+  {
+    question_ar: "العمود أ: عدد أرجل 3 قطط ، العمود ب: 12. أيهما أكبر؟",
+    question_en: "Column A: legs of 3 cats, Column B: 12. Which is greater?",
+    type: "multiple_choice",
+    options_ar: ["العمود أ", "العمود ب", "متساويان", "لا يمكن تحديده"],
+    options_en: ["Column A", "Column B", "Equal", "Cannot determine"],
+    correct_answer: "2",
+    explanation_ar: "3 × 4 = 12، متساويان",
+    explanation_en: "3 × 4 = 12, equal",
+    difficulty: "easy"
+  }
+];

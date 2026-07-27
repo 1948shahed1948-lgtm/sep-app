@@ -1,0 +1,37 @@
+// Skill classification metadata shared across the aptitude section
+export const aptitudeTopics = {
+  verbal: [
+    { key: 0, titleAr: "استيعاب المقروء", titleEn: "Reading Comprehension",
+      goldenRuleAr: "اقرأ النص بتأنٍّ، واستخرج الفكرة الرئيسة قبل الإجابة؛ فالإجابة الصحيحة دائماً مدعومة بالنص لا بالتخمين.",
+      goldenRuleEn: "Read carefully and extract the main idea before answering; the correct answer is always supported by the text, not by guessing." },
+    { key: 1, titleAr: "إكمال الجمل", titleEn: "Sentence Completion",
+      goldenRuleAr: "ابنِ معنى الجملة كاملاً قبل اختيار الكلمة، فالكلمة تُكمّل المعنى ولا تعكسه.",
+      goldenRuleEn: "Build the full meaning of the sentence before choosing the word; the word completes the meaning, not reverses it." },
+    { key: 2, titleAr: "التناظر اللفظي", titleEn: "Verbal Analogy",
+      goldenRuleAr: "حدّد العلاقة بين الزوج الأول بدقة، ثم طبّق نفس العلاقة على الزوج الثاني.",
+      goldenRuleEn: "Identify the relationship in the first pair precisely, then apply the same relationship to the second pair." },
+    { key: 3, titleAr: "الخطأ السياقي", titleEn: "Contextual Error",
+      goldenRuleAr: "اقرأ الجملة كاملة، وابحث عن الكلمة التي تخالف السياق العام للمعنى لا التي تخالف ذوقك.",
+      goldenRuleEn: "Read the whole sentence and look for the word that contradicts the overall meaning, not your taste." },
+    { key: 4, titleAr: "المفردات والمعاني", titleEn: "Vocabulary & Meanings",
+      goldenRuleAr: "اربط الكلمة بسياقها؛ فالمعنى يتحدد بالاستعمال في الجملة لا بالحفظ المنفرد.",
+      goldenRuleEn: "Link the word to its context; meaning is determined by use in the sentence, not by isolated memorization." },
+  ],
+  quantitative: [
+    { key: 0, titleAr: "الحساب والأعداد", titleEn: "Arithmetic & Numbers",
+      goldenRuleAr: "قسّم المسألة إلى خطوات بسيطة: حدّد المعطيات، ثم المطلوب، ثم العلاقة بينهما.",
+      goldenRuleEn: "Break the problem into simple steps: identify the givens, then what's required, then the relation between them." },
+    { key: 1, titleAr: "الجبر والمعادلات", titleEn: "Algebra & Equations",
+      goldenRuleAr: "ما تفعله في طرفٍ افعله في الآخر للحفاظ على توازن المعادلة.",
+      goldenRuleEn: "Whatever you do to one side, do to the other to keep the equation balanced." },
+    { key: 2, titleAr: "الهندسة", titleEn: "Geometry",
+      goldenRuleAr: "ارسم الشكل وسمّ المعطيات؛ فالرسم الصحيح نصف الحل.",
+      goldenRuleEn: "Draw the figure and label the givens; a correct drawing is half the solution." },
+    { key: 3, titleAr: "الإحصاء والاحتمالات", titleEn: "Statistics & Probability",
+      goldenRuleAr: "الاحتمال = عدد الحالات المطلوبة ÷ عدد كل الحالات الممكنة.",
+      goldenRuleEn: "Probability = number of desired outcomes ÷ total number of possible outcomes." },
+    { key: 4, titleAr: "المقارنات الكمية", titleEn: "Quantitative Comparisons",
+      goldenRuleAr: "احسب قيمتي العمودين بدقة قبل المقارنة، ولا تعتمد على التقدير البصري.",
+      goldenRuleEn: "Calculate both columns' values precisely before comparing; don't rely on visual estimation." },
+  ]
+};
