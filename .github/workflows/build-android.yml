@@ -76,10 +76,10 @@ jobs:
         run: |
           GRADLE="android/app/build.gradle"
           if [ -f "$GRADLE" ]; then
-            sed -i "s/applicationId [\"'].*/applicationId \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
-            sed -i "s/namespace [\"'].*/namespace \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
-            sed -i "s/versionCode [0-9]*/versionCode 8/" "$GRADLE"
-            sed -i "s/versionName [\"'].*/versionName \"1.0.7\"/" "$GRADLE"
+            sed -i "s/applicationId ["'].*/applicationId \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
+            sed -i "s/namespace ["'].*/namespace \"com.base6a664795ea19cd7af8bd2850.app\"/" "$GRADLE"
+            sed -i "s/versionCode [0-9]*/versionCode 9/" "$GRADLE"
+            sed -i "s/versionName ["'].*/versionName \"1.0.8\"/" "$GRADLE"
           fi
           MANIFEST="android/app/src/main/AndroidManifest.xml"
           if [ -f "$MANIFEST" ]; then
@@ -119,14 +119,3 @@ jobs:
           name: quizgate-plus-aab
           path: android/app/build/outputs/bundle/release/*.aab
           retention-days: 30
-
-# ─────────────────────────────────────────────────────────────────
-# ⚠️ للنشر الرسمي على Google Play يلزم مفتاح توقيع ثابت:
-# 1) keytool -genkeypair -v -keystore quizgate.keystore -alias quizgate \
-#      -keyalg RSA -keysize 2048 -validity 10000
-# 2) base64 quizgate.keystore > keystore.b64
-# 3) أضف المحتوى كمستودع سري: ANDROID_KEYSTORE_BASE64
-# 4) استبدل خطوة "Generate release keystore" بـ:
-#    - name: Decode keystore
-#      run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > release.keystore
-# ─────────────────────────────────────────────────────────────────
